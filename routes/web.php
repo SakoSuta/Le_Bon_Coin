@@ -14,13 +14,13 @@ use App\Http\Controllers\AnnonceController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/', [App\Http\Controllers\AnnonceController::class, 'index'])->name('annonces.index');
-Route::get('/annonces/{id}', [App\Http\Controllers\AnnonceController::class, 'show'])->name('annonces.show');
-Route::get('/annonces/create', [App\Http\Controllers\AnnonceController::class, 'create'])->name('annonces.create');
-Route::post('/annonces', [App\Http\Controllers\AnnonceController::class, 'createdOnDB'])->name('annonces.createdOnDB');
-// Route::get('/annonces/validate/{token}', [App\Http\Controllers\AnnonceController::class, 'validateAnnonce'])->name('annonces.validate');
-Route::get('/annonces/delete/{token}', [App\Http\Controllers\AnnonceController::class, 'delete'])->name('annonces.delete');
+Route::get('/{id}', [App\Http\Controllers\AnnonceController::class, 'show'])->name('annonces.show');
+Route::get('/create', [App\Http\Controllers\AnnonceController::class, 'create'])->name('annonces.create');
+Route::post('/createDB', [App\Http\Controllers\AnnonceController::class, 'createdOnDB'])->name('annonces.createdOnDB');
+// Route::get('/validate/{token}', [App\Http\Controllers\AnnonceController::class, 'validateAnnonce'])->name('annonces.validate');
+Route::get('/delete/{token}', [App\Http\Controllers\AnnonceController::class, 'delete'])->name('annonces.delete');
