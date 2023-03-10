@@ -42,7 +42,7 @@ class AnnonceController extends Controller
 
         $annonce = Annonce::create($data);
 
-        return redirect('/')->with('success', 'Annonce created successfully!');
+        return redirect()->route('annonces.index')->with('success', 'Annonce as been created successfully!');
     }
 
     public function validation()
@@ -52,6 +52,10 @@ class AnnonceController extends Controller
 
     public function delete()
     {
-        return view('annonces.delete');
+        $annonce = Annonce::where('token', $token)->firstOrFail();
+
+        $annonce->delete();
+
+        return redirect()->route('annonces.index')->with('success', 'Your annonce has been successfully deleted.');
     }
 }
