@@ -14,9 +14,11 @@ class AnnonceController extends Controller
         return view('annonces.index',compact('annonces'));
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('annonces.show');
+        $annonce = Annonce::findOrFail($id);
+
+        return view('annonces.show', compact('annonce'));
     }
 
     public function create()
