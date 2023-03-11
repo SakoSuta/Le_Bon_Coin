@@ -18,7 +18,7 @@ use App\Http\Controllers\AnnonceController;
 //     return view('welcome');
 // });
 
-Route::get('/', [App\Http\Controllers\AnnonceController::class, 'index']);
+Route::get('/', [App\Http\Controllers\AnnonceController::class, 'index'])->name('annonces.index');
 Route::get('/{id}', [App\Http\Controllers\AnnonceController::class, 'show'])->name('annonces.show');
 Route::get('/annonces/create', [App\Http\Controllers\AnnonceController::class, 'create'])->name('annonces.create');
 Route::post('/annonces', [App\Http\Controllers\AnnonceController::class, 'createdOnDB'])->name('annonces.createdOnDB');
