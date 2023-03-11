@@ -1,0 +1,5 @@
+7. Utilisation de Mailtrap
+Créer un compte Mailtrap et récupérer les paramètres d'envoi d'emails
+Configurer les paramètres d'envoi d'emails dans le fichier ".env" en utilisant les paramètres de Mailtrap
+Vérifier la réception des emails dans Mailtrap
+Une fois toutes ces étapes réalisées, vous devriez avoir une application fonctionnelle permettant la création, la validation et la suppression d'annonces de petites annonces.

@@ -29,8 +29,9 @@
 
             <label for="">Description of the annonce :</label>
             <textarea name="description" name="description" cols="30" rows="10" placeholder="Descriptions"></textarea>
+            <br>
 
-            <button type="submit">Sending the annonce</button>
+            <button type="submit"><strong>Sending the annonce</strong></button>
         </form>
     </body>
 </html>

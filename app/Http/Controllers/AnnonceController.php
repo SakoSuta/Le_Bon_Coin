@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Annonce;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ValideAnnonce;
 
 class AnnonceController extends Controller
 {
@@ -38,10 +40,12 @@ class AnnonceController extends Controller
             'email' => 'required|email',
         ]);
 
-        $data['token'] = Str::random(32);
+        $data['token'] = Str::random(25);
         $data['status'] = 0;
 
         $annonce = Annonce::create($data);
+
+        Mail::to($data['email'])->send(new ValideAnnonce());
 
         return redirect()->route('annonces.index')->with('success', 'Annonce as been created successfully!');
     }
