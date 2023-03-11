@@ -45,7 +45,7 @@ class AnnonceController extends Controller
 
         $annonce = Annonce::create($data);
 
-        Mail::to($data['email'])->send(new ValideAnnonce());
+        Mail::to($data['email'])->send(new ValideAnnonce($annonce));
 
         return redirect()->route('annonces.index')->with('success', 'Annonce as been created successfully!');
     }

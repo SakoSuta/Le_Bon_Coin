@@ -8,6 +8,6 @@
 </head>
 <body>
 <p>ah !</p>
-<a href="https://localhost:8000/validate/{{ $token }}">Clic on me for validate your annonce !</a>
+<a href="http://localhost:8000/validate/{{ $token }}">Clic on me for validate your annonce !</a>
 </body>
 </html>
