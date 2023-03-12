@@ -14,7 +14,7 @@ class AnnonceController extends Controller
 {
     public function index()
     {
-        $annonces = Annonce::where('status', 1)->get();
+        $annonces = Annonce::where('status', true)->get();
 
         return view('annonces.index', compact('annonces'));
     }
@@ -23,7 +23,7 @@ class AnnonceController extends Controller
     {
         $annonce = Annonce::findOrFail($id);
 
-        return view('annonces.show', compact('annonce'));
+        return view('annonces.show', ['annonce' => $annonce]);
     }
 
     public function create()
