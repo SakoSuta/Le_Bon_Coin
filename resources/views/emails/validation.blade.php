@@ -10,7 +10,7 @@
         <h1>Verify your annonce !</h1>
         <h2>Good job ! 👍</h2>
         <p>Your annonce has been well saved and you have to check your annonce !</p>
-        <a href="http://localhost:8000/validate/ + {{ $token }}">Clic on me for validate your annonce !</a>
+        <a href="http://localhost:8000/validate/{{ $token }}">Clic on me for validate your annonce !</a>
         <p>{{ $token }}</p>
     </body>
 </html>

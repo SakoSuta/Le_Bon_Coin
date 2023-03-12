@@ -17,7 +17,8 @@
 
         <h2>Annonces</h2>
 
-        @if($annonces === "")
+        @if($annonces === [])
+        {{ $annonces }}
             <table class="table">
                 <thead>
                     <tr>

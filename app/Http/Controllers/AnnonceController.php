@@ -20,11 +20,11 @@ class AnnonceController extends Controller
     }
 
     public function show($id)
-    {
-        $annonce = Annonce::findOrFail($id);
+{
+    $annonce = Annonce::findOrFail($id);
 
-        return view('annonces.show', ['annonce' => $annonce]);
-    }
+    return view('annonces.show', compact('annonce'));
+}
 
     public function create()
     {
@@ -56,19 +56,15 @@ class AnnonceController extends Controller
     {
         $data = Annonce::where('token', $token)->first();
 
-    // if (!$annonce) {
-    //     abort(404);
-    // }
-
     $data->status = 1;
     $data->save();
 
-    Mail::to($data->email)->send(new DeleteAnnonce($data));
+    Mail::to($data->email)->send(new CheckedAnnonce($data));
 
     return view('annonces.validation');
     }
 
-    public function delete()
+    public function delete($token)
     {
         $annonce = Annonce::where('token', $token)->firstOrFail();
 

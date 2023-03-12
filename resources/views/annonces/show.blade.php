@@ -8,10 +8,11 @@
         <title>Le Bon Coin</title>
     </head>
     <body>
-            <h1>{{ $annonce->id }} - {{ $annonce->title }}</h1>
-            <h2>{{ $annonce->name }} - {{ $annonce->email }}</h2>
-            <h3>{{ $annonce->price }}</h3>
-            <h3>{{ $annonce->location }}</h3>
-            <h3>{{ $annonce->description }}</h3>
+        <a href="http://localhost:8000/"><button><strong>Get Back</strong></button></a>
+        <h1>{{ $annonce->id }} - {{ $annonce->title }}</h1>
+        <h2>{{ $annonce->name }} - {{ $annonce->email }}</h2>
+        <h3>{{ $annonce->price }}</h3>
+        <h3>{{ $annonce->location }}</h3>
+        <h3>{{ $annonce->description }}</h3>
     </body>
 </html>
