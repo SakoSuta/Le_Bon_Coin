@@ -23,4 +23,4 @@ Route::get('/{id}', [App\Http\Controllers\AnnonceController::class, 'show'])->na
 Route::get('/annonces/create', [App\Http\Controllers\AnnonceController::class, 'create'])->name('annonces.create');
 Route::post('/annonces', [App\Http\Controllers\AnnonceController::class, 'createdOnDB'])->name('annonces.createdOnDB');
 Route::get('/validate/{token}', [App\Http\Controllers\AnnonceController::class, 'validateAnnonce'])->name('annonces.validate');
-Route::get('/annonces/delete/{token}', [App\Http\Controllers\AnnonceController::class, 'delete'])->name('annonces.delete');
+Route::get('/delete/{token}', [App\Http\Controllers\AnnonceController::class, 'delete'])->name('annonces.delete');
