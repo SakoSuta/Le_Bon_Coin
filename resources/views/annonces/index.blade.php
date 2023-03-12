@@ -17,8 +17,7 @@
 
         <h2>Annonces</h2>
 
-        @if($annonces === [])
-        {{ $annonces }}
+        @if($annonces->count() > 0)
             <table class="table">
                 <thead>
                     <tr>
