@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use App\Models\Annonce;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ValideAnnonce;
+use App\Mail\DeleteAnnonce;
+use App\Mail\CheckedAnnonce;
 
 class AnnonceController extends Controller
 {
@@ -50,9 +52,20 @@ class AnnonceController extends Controller
         return redirect()->route('annonces.index')->with('success', 'Annonce as been created successfully!');
     }
 
-    public function validation()
+    public function validateAnnonce($token)
     {
-        return view('annonces.validation');
+        $data = Annonce::where('token', $token)->first();
+
+    // if (!$annonce) {
+    //     abort(404);
+    // }
+
+    $data->status = 1;
+    $data->save();
+
+    Mail::to($data->email)->send(new DeleteAnnonce($data));
+
+    return view('annonces.validation');
     }
 
     public function delete()

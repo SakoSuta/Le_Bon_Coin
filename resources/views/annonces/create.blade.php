@@ -10,6 +10,7 @@
     <body>
         <h1>Le Bon Coin</h1>
         <h2>Create your annonce !</h2>
+        <a href="http://localhost:8000/"><button><strong>Get Back</strong></button></a>
         <form action="{{ route('annonces.createdOnDB') }}" method="POST">
         @csrf
             <label for="">Title of the annonce :</label>
